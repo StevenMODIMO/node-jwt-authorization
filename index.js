@@ -1,7 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { Pool } = require("pg");
+const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 
 app.use(cors());
@@ -24,16 +25,8 @@ app.get("/courses", (req, res) => {
 
 app.use(authRoutes);
 
-const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "users",
-  password: "biko",
-  port: 5432,
-})
-  .connect()
-  .then(() => {
-    app.listen(3000, () => {
-      console.log("http://localhost:3000");
-    });
+mongoose.connect(process.env.MONGO_URI).then(() => {
+  app.listen(process.env.PORT, () => {
+    console.log(`http://localhost:${process.env.PORT}`);
   });
+});

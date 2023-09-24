@@ -1,19 +1,22 @@
-const router = require("express").Router()
+const router = require("express").Router();
+const {
+  signUpUser,
+  loginUser,
+  logOutUser,
+} = require("../controllers/authControllers");
 
 router.get("/signup", (req, res) => {
-    res.render("signup")
-})
+  res.render("signup");
+});
 
 router.get("/login", (req, res) => {
-    res.render("login")
-})
+  res.render("login");
+});
 
-router.post("/signup", (req, res) => {
-    res.json({message: "Signup JSON"})
-})
+router.get("/logout", logOutUser);
 
-router.post("/login", (req, res) => {
-    res.json({message: "Login Json"})
-})
+router.post("/signup", signUpUser);
 
-module.exports = router
+router.post("/login", loginUser);
+
+module.exports = router;

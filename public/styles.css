@@ -39,3 +39,70 @@ nav {
 .course a {
     margin-right: 20px;
 }
+
+/* Reset some default styles */
+body, h2, form {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style the header */
+  header {
+    box-shadow: 1px 1px green;
+    color: black;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Style the h2 element inside the header */
+  header h2 {
+    font-size: 24px;
+  }
+  
+  /* Style the form */
+  form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style the labels for email and password */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Style the input fields */
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  /* Style the error messages */
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Style the Sign Up button */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Change button color on hover */
+  button:hover {
+    background-color: #0056b3;
+  }
+  

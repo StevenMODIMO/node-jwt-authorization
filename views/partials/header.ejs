@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="jwt.png" type="image/x-icon">
+    <link rel="shortcut icon" href="jwt.png" type="image/x-icon" />
     <link rel="stylesheet" href="styles.css" />
     <title>Node JWT</title>
   </head>
@@ -14,9 +14,14 @@
         <h1>Modimo Class</h1>
       </a>
       <div class="course">
+        <% if (user) { %>
+        <div>Welcome, <%= user.id %></div>
+        <a href="/logout">Logout</a>
         <a href="/courses">Courses</a>
+        <% } else { %>
         <a href="/login">Login</a>
         <a href="/signup">Signup</a>
+        <% } %>
       </div>
     </nav>
   </body>
